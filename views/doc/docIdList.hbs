@@ -1,0 +1,12 @@
+<h1 class="font-weight-light">Список заполненных документов</h1>
+<div class="list-group list-group-flush">
+    {{#each documents}}
+        <a href="?id={{this}}" class="list-group-item list-group-item-action text-primary font-weight-light">{{this}}</a>
+    {{/each}}
+
+</div>
+<div class="row justify-content-center" style="margin-top: 20px">
+    <div class="col-4">
+        <a href="../arch/{{docName}}" class="btn btn-outline-primary ">Скачать архив</a>
+    </div>
+</div>

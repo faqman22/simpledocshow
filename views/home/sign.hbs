@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<div class="container position-sticky">
+
+    <div class="row justify-content-center" style="margin-top: 270px">
+        <form method="post" >
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email"
+                       name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="pass">Password</label>
+                <input type="password" class="form-control" placeholder="Password" name="pass" required>
+            </div>
+            {{#if failAuth}}
+                <div class="text-danger">Не удалось авторизоваться</div>
+            {{/if}}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+<html>

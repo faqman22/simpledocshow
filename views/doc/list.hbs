@@ -1,0 +1,58 @@
+<h1 class="font-weight-light">Список ваших документов</h1>
+<div class="list-group list-group-flush">
+    {{#each documents}}
+        <a href="./change?id={{this}}" class="list-group-item list-group-item-action text-primary font-weight-light
+        ">{{this}}</a>
+    {{/each}}
+</div>
+
+
+<div>
+    <a href="./add" class="btn btn-outline-success">
+        Добавить документ
+    </a>
+    <button id="bid" type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+        Загрузить документ
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+
+    <div class="dropdown-menu">
+        <form action="./upload" method="post" enctype="multipart/form-data" class="px-4 py-3">
+            <div class="input-group">
+                <div class="custom-file ">
+                    <input type="file" class="custom-file-input " id="inputGroupFile04"
+                           aria-describedby="inputGroupFileAddon04" name="docFile">
+                    <label class="custom-file-label" for="inputGroupFile04">Выбрать</label>
+                </div>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Отправить
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+
+    <script>
+        bsCustomFileInput.init()
+        document.getElementById("inputGroupFileAddon04").onclick = function () {
+            document.getElementById("bid").insertAdjacentHTML("beforeend",
+                    "<div id=\"spin\" class=\"spinner-border text-success\" style=\"width: 1.25rem; height: 1.25rem;\" role=\"status\">\n" +
+                    "<span class=\"sr-only\">Loading...</span>\n" +
+                    "</div>");
+        };
+
+    </script>
+
+
+
+</div>
+
+
+
+
+
+
